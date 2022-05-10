@@ -8,16 +8,16 @@ import lombok.Setter;
 @Setter
 public class Player {
 
-    private final String team_name;
+    private final String player_name;
     private int player_goals;
 
-    public Player(String team_name) {
-        this.team_name = team_name;
+    public Player(String player_name) {
+        this.player_name = player_name;
         this.player_goals = 0;
     }
 
     @Override
     public String toString() {
-        return team_name + " Goals:" + player_goals;
+        return player_name + " Goals:" + player_goals;
     }
 }

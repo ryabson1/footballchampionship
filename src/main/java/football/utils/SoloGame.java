@@ -25,6 +25,7 @@ public class SoloGame {
         String result =
                 team.getTeam_name() + " " + home_goals + ":" + away_goals + " " + oppositeTeam;
         System.out.println(result);
+        WhoScored.whoScoredGoal(team, home_goals);
         return result;
     }
 
