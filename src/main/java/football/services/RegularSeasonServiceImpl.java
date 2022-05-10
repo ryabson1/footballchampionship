@@ -6,9 +6,9 @@ import football.utils.SoloGame;
 import java.util.Collections;
 import java.util.List;
 
-public class ModulateSeasonServiceImpl implements ModulateSeasonService {
+public class RegularSeasonServiceImpl implements RegularSeasonService {
 
-    public ModulateSeasonServiceImpl() {
+    public RegularSeasonServiceImpl() {
     }
 
     @Override

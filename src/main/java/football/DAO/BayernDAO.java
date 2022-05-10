@@ -1,40 +1,32 @@
 package football.DAO;
 
-
 import football.model.Player;
 import football.model.Team;
-import football.repo.GermanTeamsRepo;
-import football.services.ModulateSeasonServiceImpl;
+import football.repo.BayernPlayersRepo;
+import football.repo.GermanRegularSeasonTeamsRepo;
+import football.utils.FullSeason;
+import java.util.ArrayList;
 
 public class BayernDAO {
 
-    ModulateSeasonServiceImpl modulateSeasonService;
-    Team bayern;
-    GermanTeamsRepo oppositeTeams;
 
-    public BayernDAO() {
-        this.bayern = new Team("Бавария");
-        this.modulateSeasonService = new ModulateSeasonServiceImpl();
-        bayern.getTeam_players().add(new Player("Левандовски"));
-        bayern.getTeam_players().add(new Player("Г. Мюллер"));
-        bayern.getTeam_players().add(new Player("Т. Мюллер"));
-        bayern.getTeam_players().add(new Player("Кройф"));
-        bayern.getTeam_players().add(new Player("Роббен"));
-        bayern.getTeam_players().add(new Player("Коман"));
-        bayern.getTeam_players().add(new Player("Руммениге"));
-        bayern.getTeam_players().add(new Player("Маттеус"));
-        bayern.getTeam_players().add(new Player("Баллак"));
-        bayern.getTeam_players().add(new Player("Шванштайгер"));
-        bayern.getTeam_players().add(new Player("Нескенс"));
-
+    private BayernDAO() {
     }
 
-    public void createBayernRegularSeason() {
-        this.oppositeTeams = new GermanTeamsRepo();
-        modulateSeasonService.createRegularSeason(bayern, oppositeTeams.getOppositeTeams());
-        modulateSeasonService.getTopGoalScorers(bayern);
-        modulateSeasonService.getTeamStatistic(bayern);
+    public static void createBayernRegularSeason() {
+        FullSeason
+                .createRegularSeason(BayernData(), GermanRegularSeasonTeamsRepo.getOppositeTeams());
     }
 
+    public static void createNationalCup() {
+        FullSeason.createNationalCup(BayernData(), GermanRegularSeasonTeamsRepo.getOppositeTeams());
+    }
 
+    private static Team BayernData() {
+        Team bayern = new Team("Бавария");
+        for (String name : BayernPlayersRepo.createBayernPlayers()) {
+            bayern.getTeam_players().add(new Player(name));
+        }
+        return bayern;
+    }
 }

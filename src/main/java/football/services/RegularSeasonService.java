@@ -3,7 +3,7 @@ package football.services;
 import football.model.Team;
 import java.util.List;
 
-public interface ModulateSeasonService {
+public interface RegularSeasonService {
 
     void createRegularSeason(Team team, List<String> oppositeTeams);
 
