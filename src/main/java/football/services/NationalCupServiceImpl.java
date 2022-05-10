@@ -5,8 +5,11 @@ import football.model.Team;
 import football.utils.SoloGame;
 import java.util.List;
 import java.util.Random;
+import org.apache.log4j.Logger;
 
 public class NationalCupServiceImpl implements NationalCupService {
+
+    private static final Logger log = Logger.getLogger(NationalCupServiceImpl.class);
 
     public NationalCupServiceImpl() {
     }
@@ -24,6 +27,7 @@ public class NationalCupServiceImpl implements NationalCupService {
                 break;
             }
         }
+        log.info("Национальный кубок для команды " + team.getTeam_name() + " смоделирован");
     }
 
     @Override
