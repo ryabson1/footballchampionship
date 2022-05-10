@@ -5,8 +5,11 @@ import football.model.Team;
 import football.utils.SoloGame;
 import java.util.Collections;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 public class RegularSeasonServiceImpl implements RegularSeasonService {
+
+    private static final Logger log = Logger.getLogger(RegularSeasonServiceImpl.class);
 
     public RegularSeasonServiceImpl() {
     }
@@ -23,6 +26,7 @@ public class RegularSeasonServiceImpl implements RegularSeasonService {
                 stage++;
             }
         }
+        log.info("Национальный чемпионат для команды " + team.getTeam_name() + " смоделирован");
     }
 
     @Override
