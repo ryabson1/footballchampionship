@@ -8,4 +8,6 @@ public interface ModulateSeasonService {
     void createRegularSeason(Team team, List<String> oppositeTeams);
 
     void getTopGoalScorers(Team team);
+
+    void getTeamStatistic(Team team);
 }

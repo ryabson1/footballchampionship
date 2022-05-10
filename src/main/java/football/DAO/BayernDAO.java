@@ -5,7 +5,6 @@ import football.model.Player;
 import football.model.Team;
 import football.repo.GermanTeamsRepo;
 import football.services.ModulateSeasonServiceImpl;
-import java.util.Arrays;
 
 public class BayernDAO {
 
@@ -33,9 +32,8 @@ public class BayernDAO {
     public void createBayernRegularSeason() {
         this.oppositeTeams = new GermanTeamsRepo();
         modulateSeasonService.createRegularSeason(bayern, oppositeTeams.getOppositeTeams());
-        System.out.println("======Бомбардиры=======");
         modulateSeasonService.getTopGoalScorers(bayern);
-
+        modulateSeasonService.getTeamStatistic(bayern);
     }
 
 
