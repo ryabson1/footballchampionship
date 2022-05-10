@@ -13,12 +13,12 @@ public class WhoScored {
         Random rnd = new Random();
         for (int i = 0; i < goalCounter; i++) {
             int result = rnd.nextInt(team.getTeam_players().size());
-            System.out.println(result);
             team.getTeam_players().get(result)
                     .setPlayer_goals(team.getTeam_players().get(result).getPlayer_goals() + 1);
+            System.out.print(team.getTeam_players().get(result).getPlayer_name() + " ");
             scorers.append(team.getTeam_players().get(result).getPlayer_name()).append(" ");
-            System.out.println(scorers);
         }
+        System.out.println("\n");
         return scorers;
     }
 
