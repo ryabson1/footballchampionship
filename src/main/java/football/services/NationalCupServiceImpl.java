@@ -20,7 +20,7 @@ public class NationalCupServiceImpl implements NationalCupService {
             System.out.println(stage);
             String oppositeTeam = oppositeTeams.get(rnd.nextInt(oppositeTeams.size()));
             if (!SoloGame.createSoloGame(team, oppositeTeam).equals("WIN")) {
-                System.out.println(team.getTeam_name() + " вылетела");
+                System.out.println("\u001B[31m" + team.getTeam_name() + " вылетела" + "\u001B[0m");
                 break;
             }
         }

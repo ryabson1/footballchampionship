@@ -3,6 +3,7 @@ package football.DAO;
 import football.model.Player;
 import football.model.Team;
 import football.repo.BayernPlayersRepo;
+import football.repo.GermanNationalCupRepo;
 import football.repo.GermanRegularSeasonTeamsRepo;
 import football.utils.FullSeason;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class BayernDAO {
     }
 
     public static void createNationalCup() {
-        FullSeason.createNationalCup(BayernData(), GermanRegularSeasonTeamsRepo.getOppositeTeams());
+        FullSeason.createNationalCup(BayernData(), GermanNationalCupRepo.getOppositeTeams());
     }
 
     private static Team BayernData() {
